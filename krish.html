@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Krish Nepali | Portfolio</title>
+
+<style>
+
+/* PAGE STYLE */
+
+body{
+margin:0;
+font-family:Arial, sans-serif;
+background:#050510;
+color:white;
+overflow-x:hidden;
+}
+
+/* STAR BACKGROUND */
+
+.stars{
+position:fixed;
+width:100%;
+height:100%;
+background:url("https://www.transparenttextures.com/patterns/stardust.png");
+z-index:-2;
+}
+
+/* SHOOTING STARS */
+
+.shooting-star{
+position:fixed;
+top:-100px;
+width:3px;
+height:80px;
+background:linear-gradient(-45deg, white, transparent);
+animation:shoot 6s linear infinite;
+}
+
+.shooting-star:nth-child(2){left:20%; animation-delay:1s;}
+.shooting-star:nth-child(3){left:40%; animation-delay:3s;}
+.shooting-star:nth-child(4){left:60%; animation-delay:2s;}
+.shooting-star:nth-child(5){left:80%; animation-delay:4s;}
+
+@keyframes shoot{
+0%{
+transform:translateY(-100px) translateX(0) rotate(45deg);
+opacity:1;
+}
+100%{
+transform:translateY(900px) translateX(400px) rotate(45deg);
+opacity:0;
+}
+}
+
+/* NAVBAR */
+
+nav{
+display:flex;
+justify-content:space-between;
+padding:20px 10%;
+background:rgba(0,0,0,0.6);
+}
+
+nav a{
+color:white;
+text-decoration:none;
+margin-left:20px;
+font-size: large;
+}
+
+nav a:hover{
+color:cyan;
+}
+
+/* HERO SECTION */
+
+.hero{
+display:flex;
+flex-direction:column;
+align-items:center;
+text-align:center;
+padding:120px 20px;
+}
+
+/* PROFILE PHOTO */
+
+.profile-pic{
+width:170px;
+height:170px;
+border-radius:50%;
+border:4px solid cyan;
+object-fit:cover;
+box-shadow:0 0 20px cyan;
+margin-bottom:20px;
+}
+
+/* GLOWING NAME */
+
+.glow{
+font-size:55px;
+animation:glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow{
+from{ text-shadow:0 0 10px cyan,0 0 20px cyan; }
+to{ text-shadow:0 0 20px cyan,0 0 40px cyan,0 0 60px cyan; }
+}
+
+/* TYPING TEXT */
+
+.typing{
+font-size:26px;
+color:cyan;
+border-right:3px solid cyan;
+white-space:nowrap;
+overflow:hidden;
+width:10ch;
+margin:auto;
+animation:typing 3s steps(10) forwards, blink .7s step-end infinite;
+}
+
+@keyframes typing{
+from{width:0}
+to{width:10ch}
+}
+
+@keyframes blink{
+50%{border-color:transparent}
+}
+
+/* CV BUTTON */
+
+.cv-btn{
+margin-top:20px;
+padding:12px 25px;
+background:cyan;
+color:black;
+font-weight:bold;
+text-decoration:none;
+border-radius:8px;
+transition:0.3s;
+}
+
+.cv-btn:hover{
+background:white;
+box-shadow:0 0 15px cyan;
+}
+
+/* SECTION STYLE */
+
+section{
+padding:70px 10%;
+text-align:center;
+font-size:23px;
+}
+
+/* SKILLS */
+
+.skills{
+display:flex;
+justify-content:center;
+gap:20px;
+flex-wrap:wrap;
+}
+
+.skill{
+border:2px solid cyan;
+padding:10px 20px;
+border-radius:20px;
+transition:0.3s;
+}
+
+.skill:hover{
+box-shadow:0 0 15px cyan;
+}
+
+/* CONTACT FORM */
+
+.contact-form{
+max-width:400px;
+margin:auto;
+display:flex;
+flex-direction:column;
+gap:15px;
+}
+
+.contact-form input{
+padding:10px;
+border:none;
+border-radius:5px;
+}
+
+.contact-form button{
+padding:10px;
+background:cyan;
+border:none;
+border-radius:5px;
+cursor:pointer;
+font-weight:bold;
+}
+
+.contact-form button:hover{
+background:white;
+}
+
+/* FOOTER */
+
+footer{
+text-align:center;
+padding:20px;
+background:#111;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="stars"></div>
+
+<div class="shooting-star"></div>
+<div class="shooting-star"></div>
+<div class="shooting-star"></div>
+<div class="shooting-star"></div>
+
+<!-- NAVBAR -->
+
+<nav>
+<h2>Krish Nepali</h2>
+
+<div>
+<a href="#about">About</a>
+<a href="#skills">Skills</a>
+<a href="#contact">Contact</a>
+</div>
+</nav>
+
+<!-- HERO -->
+
+<div class="hero">
+
+<img src="photo.jpg" class="profile-pic">
+
+<h1 class="glow">Krish Nepali</h1>
+
+<p class="typing">IT Student</p>
+
+<a href="cv.pdf" download class="cv-btn">Download Portfolio</a>
+
+</div>
+
+<!-- ABOUT -->
+
+<section id="about">
+<h1>About Me</h1>
+<p>
+Hello! I am Krish Nepali, an IT student who enjoys learning programming,
+web development and creating small projects to improve my skills.
+</p>
+</section>
+
+<!-- SKILLS -->
+
+<section id="skills">
+<h2>Skills</h2>
+
+<div class="skills">
+<div class="skill">HTML</div>
+<div class="skill">CSS</div>
+<div class="skill">JavaScript</div>
+<div class="skill">C Programming</div>
+<div class="skill">GitHub</div>
+</div>
+
+</section>
+
+<!-- CONTACT -->
+
+<section id="contact">
+
+<h2>Contact Me</h2>
+
+<form class="contact-form">
+
+<input type="text" placeholder="Your Name" required>
+
+<input type="email" placeholder="Your Email" required>
+
+<button type="submit">Send</button>
+
+</form>
+
+</section>
+
+<footer>
+© 2026 Krish Nepali Portfolio
+</footer>
+
+</body>
+</html>
